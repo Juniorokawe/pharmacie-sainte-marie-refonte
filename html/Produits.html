@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Produits - Pharmacie Sainte Marie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/Produits.css">
+</head>
+<body>
+    <header class="main-header">
+        <!-- Même header que les autres pages -->
+    </header>
+
+    <section class="hero" style="background-image: linear-gradient(rgba(42, 127, 98, 0.8), rgba(42, 127, 98, 0.8)), url('https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80')">
+        <div class="hero-content">
+            <h1>Nos Produits</h1>
+            <p>Découvrez notre large sélection de produits de santé et bien-être</p>
+        </div>
+    </section>
+
+    <section class="produits-section">
+        <div class="section-title">
+            <h2>Tous nos produits</h2>
+            <div class="categories-filter">
+                <button class="filter-btn active" data-category="all">Tous</button>
+                <button class="filter-btn" data-category="capilaire">Capilaire</button>
+                <button class="filter-btn" data-category="nutrition">Nutrition</button>
+                <button class="filter-btn" data-category="sexualite">Sexualité</button>
+                <button class="filter-btn" data-category="maternite">Maternité</button>
+                <button class="filter-btn" data-category="hygiene">Hygiène</button>
+            </div>
+        </div>
+        
+        <div class="produits-grid">
+            <!-- Produits Capilaire -->
+            <div class="produit-card" data-category="capilaire">
+                <div class="produit-img">
+                    <img src="https://via.placeholder.com/300x300?text=Shampoing+Doux" alt="Shampoing Doux">
+                </div>
+                <div class="produit-info">
+                    <h3>Shampoing Doux Kérastase</h3>
+                    <p class="produit-desc">250ml - Pour cheveux secs</p>
+                    <div class="produit-prix">
+                        <span class="prix-actuel">24,90€</span>
+                    </div>
+                    <button class="btn-ajouter">Ajouter au panier</button>
+                </div>
+            </div>
+            
+            <!-- Plus de produits capilaire... -->
+            
+            <!-- Produits Nutrition -->
+            <div class="produit-card" data-category="nutrition">
+                <div class="produit-img">
+                    <img src="https://via.placeholder.com/300x300?text=Vitamine+D3" alt="Vitamine D3">
+                </div>
+                <div class="produit-info">
+                    <h3>Vitamine D3 1000UI</h3>
+                    <p class="produit-desc">120 gélules - Renforce les os</p>
+                    <div class="produit-prix">
+                        <span class="prix-actuel">12,50€</span>
+                    </div>
+                    <button class="btn-ajouter">Ajouter au panier</button>
+                </div>
+            </div>
+            
+            <!-- Plus de produits nutrition... -->
+            
+            <!-- Produits Sexualité -->
+            <div class="produit-card" data-category="sexualite">
+                <div class="produit-img">
+                    <img src="https://via.placeholder.com/300x300?text=Test+Grossesse" alt="Test de Grossesse">
+                </div>
+                <div class="produit-info">
+                    <h3>Test de Grossesse</h3>
+                    <p class="produit-desc">Résultat en 3 minutes</p>
+                    <div class="produit-prix">
+                        <span class="prix-actuel">8,90€</span>
+                    </div>
+                    <button class="btn-ajouter">Ajouter au panier</button>
+                </div>
+            </div>
+            
+            <!-- Plus de produits sexualité... -->
+            
+            <!-- Produits Maternité -->
+            <div class="produit-card" data-category="maternite">
+                <div class="produit-img">
+                    <img src="https://via.placeholder.com/300x300?text=Creme+Vergetures" alt="Crème Vergetures">
+                </div>
+                <div class="produit-info">
+                    <h3>Crème Vergetures</h3>
+                    <p class="produit-desc">200ml - Prévention et soin</p>
+                    <div class="produit-prix">
+                        <span class="prix-actuel">15,20€</span>
+                    </div>
+                    <button class="btn-ajouter">Ajouter au panier</button>
+                </div>
+            </div>
+            
+            <!-- Plus de produits maternité... -->
+            
+            <!-- Produits Hygiène -->
+            <div class="produit-card" data-category="hygiene">
+                <div class="produit-img">
+                    <img src="https://via.placeholder.com/300x300?text=Gel+Hydroalcoolique" alt="Gel Hydroalcoolique">
+                </div>
+                <div class="produit-info">
+                    <h3>Gel Hydroalcoolique</h3>
+                    <p class="produit-desc">500ml - 70% alcool</p>
+                    <div class="produit-prix">
+                        <span class="prix-actuel">5,90€</span>
+                    </div>
+                    <button class="btn-ajouter">Ajouter au panier</button>
+                </div>
+            </div>
+            
+            <!-- Plus de produits hygiene... -->
+        </div>
+    </section>
+
+    <footer>
+        <!-- Même footer que les autres pages -->
+    </footer>
+
+    <script src="../script/Produits.js"></script>
+</body>
+</html>

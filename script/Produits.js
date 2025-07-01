@@ -1,4 +1,4 @@
-// ClickCollect.js
+// Produits.js
 document.addEventListener('DOMContentLoaded', function() {
     // Filtrage des produits
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Animation des cartes de produits au chargement
+    // Animation des cartes de produits
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -41,12 +41,23 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
     
-    // Animation des cartes d'avantages
-    const avantageCards = document.querySelectorAll('.avantage-card');
-    avantageCards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = `opacity 0.5s ease, transform 0.5s ease ${index * 0.1}s`;
-        observer.observe(card);
+    // Gestion du panier (simplifiée)
+    const addToCartButtons = document.querySelectorAll('.btn-ajouter');
+    
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const productCard = this.closest('.produit-card');
+            const productName = productCard.querySelector('h3').textContent;
+            const productPrice = productCard.querySelector('.prix-actuel').textContent;
+            
+            // Ici vous pourriez ajouter la logique pour ajouter au panier
+            Swal.fire({
+                icon: 'success',
+                title: 'Produit ajouté',
+                html: `<strong>${productName}</strong><br>${productPrice}`,
+                confirmButtonColor: 'var(--primary-color)',
+                timer: 1500
+            });
+        });
     });
 });

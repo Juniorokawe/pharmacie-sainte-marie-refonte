@@ -1,42 +1,36 @@
-// Ajoutez ce code au début du fichier script.js (avant le DOMContentLoaded)
-
-// Création des bulles animées
-function createBubbles() {
-    const bubbleCount = 15;
-    const body = document.body;
-    
-    for (let i = 0; i < bubbleCount; i++) {
-        const bubble = document.createElement('div');
-        bubble.classList.add('bubble');
+document.addEventListener('DOMContentLoaded', function() {
+    // Création des bulles adaptées à l'écran
+    function createBubbles() {
+        const bubbleCount = window.innerWidth < 768 ? 8 : 15;
+        const body = document.body;
         
-        // Taille aléatoire entre 20px et 100px
-        const size = Math.random() * 80 + 20;
-        bubble.style.width = `${size}px`;
-        bubble.style.height = `${size}px`;
-        
-        // Position aléatoire
-        bubble.style.left = `${Math.random() * 100}vw`;
-        bubble.style.bottom = `-${size}px`;
-        
-        // Animation avec durée aléatoire
-        const duration = Math.random() * 30 + 20;
-        bubble.style.animationDuration = `${duration}s`;
-        
-        // Délai aléatoire
-        bubble.style.animationDelay = `${Math.random() * 10}s`;
-        
-        body.appendChild(bubble);
+        for (let i = 0; i < bubbleCount; i++) {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            
+            // Taille adaptative
+            const baseSize = window.innerWidth < 480 ? 15 : 20;
+            const size = Math.random() * 60 + baseSize;
+            bubble.style.width = `${size}px`;
+            bubble.style.height = `${size}px`;
+            
+            // Position aléatoire
+            bubble.style.left = `${Math.random() * 100}vw`;
+            bubble.style.bottom = `-${size}px`;
+            
+            // Animation adaptée
+            const baseDuration = window.innerWidth < 768 ? 20 : 30;
+            const duration = Math.random() * 20 + baseDuration;
+            bubble.style.animationDuration = `${duration}s`;
+            bubble.style.animationDelay = `${Math.random() * 5}s`;
+            
+            body.appendChild(bubble);
+        }
     }
-}
 
-// Appelez cette fonction lorsque le DOM est chargé
-document.addEventListener('DOMContentLoaded', function() {
     createBubbles();
-    
-    // Le reste de votre code existant...
-});
 
-document.addEventListener('DOMContentLoaded', function() {
+    // Gestion du formulaire (reste identique mais optimisé pour le tactile)
     const uploadArea = document.getElementById('uploadArea');
     const fileInput = document.getElementById('fileInput');
     const filePreview = document.getElementById('filePreview');
@@ -44,72 +38,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const previewImage = document.getElementById('previewImage');
     const form = document.getElementById('ordonnanceForm');
     
-    // Gestion du clic sur la zone d'upload
+    // Optimisation pour les événements tactiles
     uploadArea.addEventListener('click', () => fileInput.click());
+    uploadArea.style.cursor = 'pointer';
     
-    // Gestion du changement de fichier
     fileInput.addEventListener('change', function() {
         if (this.files && this.files[0]) {
             const file = this.files[0];
-            fileName.textContent = file.name;
+            fileName.textContent = file.name.length > 25 
+                ? file.name.substring(0, 22) + '...' 
+                : file.name;
             
-            // Afficher l'aperçu pour les images
             if (file.type.match('image.*')) {
                 const reader = new FileReader();
                 reader.onload = function(e) {
                     previewImage.src = e.target.result;
+                    previewImage.style.display = 'block';
                 }
                 reader.readAsDataURL(file);
-                filePreview.style.display = 'block';
             } else {
                 previewImage.style.display = 'none';
-                filePreview.style.display = 'block';
             }
-            
-            uploadArea.style.borderColor = 'var(--primary-color)';
+            filePreview.style.display = 'block';
         }
     });
-    
-    // Drag and drop
-    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-        uploadArea.addEventListener(eventName, preventDefaults, false);
-        document.body.addEventListener(eventName, preventDefaults, false);
-    });
-    
-    function preventDefaults(e) {
-        e.preventDefault();
-        e.stopPropagation();
-    }
-    
-    ['dragenter', 'dragover'].forEach(eventName => {
-        uploadArea.addEventListener(eventName, highlight, false);
-    });
-    
-    ['dragleave', 'drop'].forEach(eventName => {
-        uploadArea.addEventListener(eventName, unhighlight, false);
-    });
-    
-    function highlight() {
-        uploadArea.style.borderColor = 'var(--primary-color)';
-        uploadArea.style.backgroundColor = 'rgba(42, 127, 98, 0.05)';
-    }
-    
-    function unhighlight() {
-        uploadArea.style.borderColor = '#ddd';
-        uploadArea.style.backgroundColor = 'transparent';
-    }
-    
-    uploadArea.addEventListener('drop', handleDrop, false);
-    
-    function handleDrop(e) {
-        const dt = e.dataTransfer;
-        const files = dt.files;
-        fileInput.files = files;
-        
-        if (files.length > 0) {
-            fileInput.dispatchEvent(new Event('change'));
-        }
-    }
     
     // Soumission du formulaire
     form.addEventListener('submit', function(e) {
@@ -125,9 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Ici vous ajouteriez la logique d'envoi vers votre backend
-        // Par exemple avec fetch() ou AJAX
-        
+        // Simulation d'envoi
         Swal.fire({
             icon: 'success',
             title: 'Ordonnance envoyée',
@@ -136,12 +86,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }).then(() => {
             form.reset();
             filePreview.style.display = 'none';
-            uploadArea.innerHTML = `
-                <i class="fas fa-cloud-upload-alt upload-icon"></i>
-                <p class="upload-text">Glissez-déposez votre ordonnance ici</p>
-                <p class="upload-hint">ou cliquez pour sélectionner un fichier</p>
-            `;
         });
     });
-});
 
+    // Réinitialisation des bulles lors du redimensionnement
+    window.addEventListener('resize', function() {
+        document.querySelectorAll('.bubble').forEach(b => b.remove());
+        createBubbles();
+    });
+});
