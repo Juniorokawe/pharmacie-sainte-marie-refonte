@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Même head que la page d'accueil -->
+         <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacie Sainte Marie - Votre santé, notre priorité</title>
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+    <meta name="description" content="Pharmacie Sainte Marie à Libreville : conseils santé, parapharmacie, laboratoire d'analyses et services innovants pour votre bien-être.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/Ordonnance.css">
+    
+    <!-- Polices Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="../assests/logo.jpg" alt="Pharmacie Sainte Marie">
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="Ordonnance.html">Ordonnance</a></li>
+                    <li><a href="ClickCollect.html"></a></li>
+                    <li><a href="Parapharmacie.html">Parapharmacie</a></li>
+                    <li><a href="Laboratoire.html">Laboratoire</a></li>
+                    <li><a href="Contact.HTML">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-actions">
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </header>
+    <div class="ordonnance-container">
+        <div class="ordonnance-card">
+            <div class="logo-header">
+                <img src="../assests/logo.jpg" alt="Pharmacie Sainte Marie">
+            </div>
+            
+            <h1 class="form-title">ENVOYER VOTRE ORDONNANCE</h1>
+            <p class="form-subtitle">Remplissez ce formulaire pour nous transmettre votre ordonnance</p>
+            
+            <form id="ordonnanceForm">
+                <div class="form-group">
+                    <label for="nom">Nom complet</label>
+                    <input type="text" id="nom" placeholder="Votre nom et prénom" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="votre@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telephone">Téléphone</label>
+                    <input type="tel" id="telephone" placeholder="060 05 44 26" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Votre ordonnance</label>
+                    <div class="upload-section" id="uploadArea">
+                        <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                        <p class="upload-text">Glissez-déposez votre ordonnance ici</p>
+                        <p class="upload-hint">ou cliquez pour sélectionner un fichier</p>
+                        <input type="file" id="fileInput" accept="image/*,.pdf">
+                    </div>
+                    <div class="file-preview" id="filePreview">
+                        <span id="fileName"></span>
+                        <img id="previewImage" src="" alt="Aperçu de l'ordonnance">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message complémentaire (optionnel)</label>
+                    <textarea id="message" rows="4" placeholder="Informations supplémentaires..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit">ENVOYER L'ORDONNANCE</button>
+            </form>
+            
+            <div class="form-footer">
+                <p>Vos données sont sécurisées et ne seront utilisées que pour traiter votre demande.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Pharmacie Sainte Marie</h3>
+                <p>Votre santé est notre priorité. Nous mettons tout en œuvre pour vous offrir des services de qualité et un accompagnement personnalisé.</p><br>
+                <div class="social-links">
+                    <h3>Suivez-nous</h3>
+                    <a href="https://www.facebook.com/Pharmacie-Sainte-Marie-233865447369907"><span class="iconify" data-icon="mdi:facebook"></span></a>
+                    <a href="https://twitter.com/CareSainteMarie?s=03"><span class="iconify" data-icon="mdi:twitter"></span></a>
+                    <a href="https://wa.me/+24160054426"><span class="iconify" data-icon="mdi:whatsapp"></span></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="#">Nos services</a></li>
+                    <li><a href="#">Parapharmacie</a></li>
+                    <li><a href="#">Laboratoire</a></li>
+                    <li><a href="#">Conseils santé</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Nos services</h3>
+                <ul>
+                    <li><a href="#">Envoi d'ordonnance</a></li>
+                    <li><a href="#">Click & Collect</a></li>
+                    <li><a href="#">Livraison à domicile</a></li>
+                    <li><a href="#">Conseils pharmacie</a></li>
+                    <li><a href="#">Analyse médicale</a></li>
+                </ul>
+            </div>
+    
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Pharmacie Sainte Marie. Tous droits réservés. | <a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a></p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../script/Ordonnance.js"></script>
+</body>
+</html>

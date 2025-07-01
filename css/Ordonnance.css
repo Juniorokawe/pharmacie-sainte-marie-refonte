@@ -1,0 +1,228 @@
+:root {
+    --primary-color: #2a7f62;
+    --secondary-color: #3a9e7f;
+    --accent-color: #f8a055;
+    --light-color: #f5f9f7;
+    --dark-color: #1a2e28;
+    --white: #ffffff;
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Animation de fond */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(42, 127, 98, 0.05) 0%, 
+        rgba(248, 160, 85, 0.05) 50%, 
+        rgba(42, 127, 98, 0.05) 100%);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Bulles animées */
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(42, 127, 98, 0.1);
+    z-index: -1;
+    animation: float linear infinite;
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-100vh);
+    }
+}
+.ordonnance-container {
+    width: 100%;
+    max-width: none; /* Supprime la limite de largeur maximale */
+    padding: 2rem 5%; /* Marge de 5% à gauche et à droite */
+}
+
+.ordonnance-card {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 2.5rem;
+    text-align: center;
+    width: 100%; /* Assure que la carte prend toute la largeur disponible */
+    max-width: 100%; /* Empêche tout dépassement */
+    box-sizing: border-box; /* Inclut le padding dans la largeur */
+
+}
+
+/* Ajoutez cette règle pour les très grands écrans si nécessaire */
+@media (min-width: 1600px) {
+    .ordonnance-container {
+        padding: 2rem 10%; /* Marges plus grandes sur les très grands écrans */
+    }
+}
+
+.logo-header {
+    margin-bottom: 1.5rem;
+}
+
+.logo-header img {
+    max-width: 100px;
+}
+
+.form-title {
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(42, 127, 98, 0.1);
+}
+
+.upload-section {
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.upload-section:hover {
+    border-color: var(--primary-color);
+    background: rgba(42, 127, 98, 0.03);
+}
+
+.upload-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.upload-text {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.upload-hint {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+#fileInput {
+    display: none;
+}
+
+.file-preview {
+    margin-top: 1rem;
+    display: none;
+}
+
+.file-preview img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+}
+
+.btn-submit {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.btn-submit:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.form-footer {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .ordonnance-card {
+        padding: 1.5rem;
+    }
+    
+    .form-title {
+        font-size: 1.5rem;
+    }
+}
+

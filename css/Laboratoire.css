@@ -1,0 +1,190 @@
+/* LABORATOIRE PAGE */
+.labo-presentation {
+    padding: 3rem 1rem;
+}
+
+.presentation-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.presentation-img {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.presentation-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.presentation-content {
+    flex: 1;
+}
+
+.qualites {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.qualite {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.qualite i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.qualite h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.analyses {
+    padding: 3rem 1rem;
+    background: var(--light-color);
+}
+
+.analyses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.analyse-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.analyse-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.analyse-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(42, 127, 98, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.analyse-icon i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.analyse-card h3 {
+    margin-bottom: 1rem;
+}
+
+.analyse-card ul {
+    list-style: none;
+}
+
+.analyse-card ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.analyse-card ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.rdv-lab {
+    padding: 3rem 1rem;
+}
+
+.rdv-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 3rem;
+}
+
+.rdv-content {
+    flex: 1;
+}
+
+.rdv-avantages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.avantage {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.avantage i {
+    color: var(--accent-color);
+}
+
+.rdv-form {
+    flex: 1;
+}
+
+.info-box {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.info-box h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.info-box h4 i {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .presentation-container,
+    .rdv-container {
+        flex-direction: column;
+    }
+    
+    .presentation-img {
+        order: -1;
+    }
+}

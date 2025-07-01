@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <!-- Même head que la page d'accueil -->
+         <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacie Sainte Marie - Votre santé, notre priorité</title>
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+    <meta name="description" content="Pharmacie Sainte Marie à Libreville : conseils santé, parapharmacie, laboratoire d'analyses et services innovants pour votre bien-être.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="css/ClickCollect.css">
+    <!-- Polices Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Même header que la page d'accueil -->
+     <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="assests/logo.jpg" alt="Pharmacie Sainte Marie">
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="Ordonance.html">Ordonnance</a></li>
+                    <li><a href="ClickCollect.html"></a></li>
+                    <li><a href="Parapharmacie.html">Parapharmacie</a></li>
+                    <li><a href="Laboratoire.html">Laboratoire</a></li>
+                    <li><a href="Contact.HTML">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-actions">
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" style="background-image: linear-gradient(rgba(42, 127, 98, 0.8), rgba(42, 127, 98, 0.8)), url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+        <div class="hero-content">
+            <h1>Click & Collect</h1>
+            <p>Commandez en ligne, retirez en pharmacie sans attente</p>
+            <a href="#produits" class="btn">Voir nos produits</a>
+        </div>
+    </section>
+
+    <section class="avantages">
+        <div class="section-title">
+            <h2>Les avantages du Click & Collect</h2>
+        </div>
+        
+        <div class="avantages-grid">
+            <div class="avantage-card">
+                <i class="fas fa-clock"></i>
+                <h3>Gain de temps</h3>
+                <p>Plus besoin de faire la queue, votre commande vous attend</p>
+            </div>
+            
+            <div class="avantage-card">
+                <i class="fas fa-euro-sign"></i>
+                <h3>Pas de frais</h3>
+                <p>Service gratuit sans minimum d'achat</p>
+            </div>
+            
+            <div class="avantage-card">
+                <i class="fas fa-calendar-check"></i>
+                <h3>Disponibilité</h3>
+                <p>Retrait possible en 1h selon stock</p>
+            </div>
+            
+            <div class="avantage-card">
+                <i class="fas fa-lock"></i>
+                <h3>Paiement sécurisé</h3>
+                <p>CB, virement ou sur place</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="produits" id="produits">
+        <div class="section-title">
+            <h2>Nos produits disponibles</h2>
+            <div class="categories-filter">
+                <button class="filter-btn active" data-category="all">Tous</button>
+                <button class="filter-btn" data-category="medicament">Médicaments</button>
+                <button class="filter-btn" data-category="parapharmacie">Parapharmacie</button>
+                <button class="filter-btn" data-category="bebe">Bébé</button>
+                <button class="filter-btn" data-category="cosmetique">Cosmétiques</button>
+            </div>
+        </div>
+        
+        <div class="produits-grid">
+            <!-- Produit 1 -->
+            <div class="produit-card" data-category="medicament">
+                <div class="produit-img">
+                    <img src="https://via.placeholder.com/300x300?text=Produit+1" alt="Produit 1">
+                    <span class="promo-badge">-20%</span>
+                </div>
+                <div class="produit-info">
+                    <h3>Doliprane 1000mg</h3>
+                    <p class="produit-desc">Boîte de 8 comprimés</p>
+                    <div class="produit-prix">
+                        <span class="prix-actuel">5,90€</span>
+                        <span class="prix-ancien">7,40€</span>
+                    </div>
+                    <button class="btn-ajouter">Ajouter au panier</button>
+                </div>
+            </div>
+            
+            <!-- Produit 2 -->
+            <div class="produit-card" data-category="parapharmacie">
+                <div class="produit-img">
+                    <img src="https://via.placeholder.com/300x300?text=Produit+2" alt="Produit 2">
+                </div>
+                <div class="produit-info">
+                    <h3>Biafine</h3>
+                    <p class="produit-desc">Crème 100g</p>
+                    <div class="produit-prix">
+                        <span class="prix-actuel">8,20€</span>
+                    </div>
+                    <button class="btn-ajouter">Ajouter au panier</button>
+                </div>
+            </div>
+            
+            <!-- Plus de produits... -->
+        </div>
+    </section>
+
+    <section class="retrait-info">
+        <div class="info-container">
+            <div class="info-content">
+                <h2>Retrait en pharmacie</h2>
+                <p>Votre commande est préparée avec soin par notre équipe et disponible sous 1h (selon disponibilité des produits).</p>
+                
+                <div class="horaires">
+                    <h3><i class="fas fa-clock"></i> Horaires de retrait :</h3>
+                    <ul>
+                        <li>Lundi au vendredi : 7h30 - 21h</li>
+                        <li>Samedi : 7h30 - 21h</li>
+                        <li>Dimanche et fériés : 8h - 20h</li>
+                    </ul>
+                </div>
+                
+                <div class="adresse">
+                    <h3><i class="fas fa-map-marker-alt"></i> Adresse :</h3>
+                    <p>Pharmacie Sainte Marie<br>BP 1838 Libreville, Gabon</p>
+                    <a href="#" class="btn-outline"><i class="fas fa-map"></i> Voir sur la carte</a>
+                </div>
+            </div>
+            
+            <div class="info-img">
+                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Pharmacie Sainte Marie">
+            </div>
+        </div>
+    </section>
+
+    <!-- Même footer que la page d'accueil -->
+     <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Pharmacie Sainte Marie</h3>
+                <p>Votre santé est notre priorité. Nous mettons tout en œuvre pour vous offrir des services de qualité et un accompagnement personnalisé.</p><br>
+                <div class="social-links">
+                    <h3>Suivez-nous</h3>
+                    <a href="https://www.facebook.com/Pharmacie-Sainte-Marie-233865447369907"><span class="iconify" data-icon="mdi:facebook"></span></a>
+                    <a href="https://twitter.com/CareSainteMarie?s=03"><span class="iconify" data-icon="mdi:twitter"></span></a>
+                    <a href="https://wa.me/+24160054426"><span class="iconify" data-icon="mdi:whatsapp"></span></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="#">Nos services</a></li>
+                    <li><a href="Parapharmacie.html">Parapharmacie</a></li>
+                    <li><a href="Laboratoire.html">Laboratoire</a></li>
+                    <li><a href="#">Conseils santé</a></li>
+                    <li><a href="Contact.HTML">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Nos services</h3>
+                <ul>
+                    <li><a href="Ordonance.html">Envoi d'ordonnance</a></li>
+                    <li><a href="ClickCollect.html">Click & Collect</a></li>
+                    <li><a href="#">Livraison à domicile</a></li>
+                    <li><a href="#">Conseils pharmacie</a></li>
+                    <li><a href="#">Analyse médicale</a></li>
+                </ul>
+            </div>
+    
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Pharmacie Sainte Marie. Tous droits réservés. | <a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a></p>
+        </div>
+    </footer>
+     <script src="script.js"></script>
+     <script src="script/ClickCollect.js"></script>
+</body>
+</html>
