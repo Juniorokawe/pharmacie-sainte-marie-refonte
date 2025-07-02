@@ -75,7 +75,7 @@
             
             <div class="service-card">
                 <div class="service-img">
-                    <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Click & Collect">
+                    <img src="https://fiches-pratiques.chefdentreprise.com/Assets/Img/FICHEPRATIQUE/2020/7/351237/Decouvrir-avantages-click-and-collect-F.jpg" alt="Click & Collect">
                 </div>
                 <div class="service-content">
                     <h3>Click & Collect</h3>
@@ -231,10 +231,10 @@
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
                     <li><a href="#">Nos services</a></li>
-                    <li><a href="#">Parapharmacie</a></li>
-                    <li><a href="#">Laboratoire</a></li>
+                    <li><a href="html/Parapharmacie.html">Parapharmacie</a></li>
+                    <li><a href="html/Laboratoire.html">Laboratoire</a></li>
                     <li><a href="#">Conseils santé</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="html/Contact.HTML">Contact</a></li>
                 </ul>
             </div>
             
@@ -255,6 +255,107 @@
             <p>&copy; 2025 Pharmacie Sainte Marie. Tous droits réservés. | <a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a></p>
         </div>
     </footer>
+    <div class="burger" id="burger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <script src="script.js"></script>
+    <!-- Ajoutez ceci avant </body> -->
+<div id="chatbot-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+    <div id="chatbot" style="width: 350px; height: 500px; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); display: none; flex-direction: column;">
+        <div style="background: #2a5c8b; color: white; padding: 15px; border-top-left-radius: 10px; border-top-right-radius: 10px; display: flex; justify-content: space-between;">
+            <h3 style="margin: 0;">Assistant Pharmacie</h3>
+            <button id="close-chat" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer;">×</button>
+        </div>
+        <div id="chat-messages" style="flex: 1; padding: 15px; overflow-y: auto; background: #f9f9f9;"></div>
+        <div style="padding: 10px; border-top: 1px solid #eee; display: flex;">
+            <input id="user-input" type="text" placeholder="Tapez votre message..." style="flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none;">
+            <button id="send-btn" style="margin-left: 10px; padding: 10px 15px; background: #2a5c8b; color: white; border: none; border-radius: 20px; cursor: pointer;">Envoyer</button>
+        </div>
+    </div>
+    <button id="chatbot-button" style="width: 60px; height: 60px; border-radius: 50%; background: #2a5c8b; color: white; border: none; font-size: 24px; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+</div>
+
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger-cx/bootstrap.js?v=1"></script>
+<df-messenger
+  df-cx="true"
+  location="global"
+  chat-title="Pharmacie Sainte Marie"
+  agent-id="VOTRE_AGENT_ID"
+  language-code="fr"
+></df-messenger>
+
+<script>
+    // Initialisation du chatbot
+    document.addEventListener('DOMContentLoaded', function() {
+        const chatbotButton = document.getElementById('chatbot-button');
+        const chatbot = document.getElementById('chatbot');
+        const closeChat = document.getElementById('close-chat');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+        const chatMessages = document.getElementById('chat-messages');
+        
+        // Afficher/masquer le chatbot
+        chatbotButton.addEventListener('click', function() {
+            chatbot.style.display = chatbot.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        closeChat.addEventListener('click', function() {
+            chatbot.style.display = 'none';
+        });
+        
+        // Envoyer un message
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (message !== '') {
+                addMessage(message, 'user');
+                userInput.value = '';
+                
+                // Ici, vous enverriez normalement le message à Dialogflow
+                // Pour l'exemple, nous simulons une réponse
+                setTimeout(() => {
+                    addMessage("Merci pour votre message. Comment puis-je vous aider concernant vos besoins en pharmacie?", 'bot');
+                }, 1000);
+            }
+        }
+        
+        sendBtn.addEventListener('click', sendMessage);
+        userInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.style.margin = '10px 0';
+            messageDiv.style.padding = '8px 12px';
+            messageDiv.style.borderRadius = '18px';
+            messageDiv.style.maxWidth = '80%';
+            messageDiv.style.wordWrap = 'break-word';
+            
+            if (sender === 'user') {
+                messageDiv.style.backgroundColor = '#2a5c8b';
+                messageDiv.style.color = 'white';
+                messageDiv.style.marginLeft = 'auto';
+            } else {
+                messageDiv.style.backgroundColor = '#e3f2fd';
+                messageDiv.style.marginRight = 'auto';
+            }
+            
+            messageDiv.textContent = text;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        // Message de bienvenue
+        setTimeout(() => {
+            addMessage("Bonjour ! Je suis l'assistant de la Pharmacie Sainte Marie. Comment puis-je vous aider aujourd'hui ?", 'bot');
+        }, 500);
+    });
+</script>
    </body>
 </html>
