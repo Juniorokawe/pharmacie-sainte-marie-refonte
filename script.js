@@ -1,5 +1,4 @@
-
-        // Script pour le menu mobile
+// Script pour le menu mobile
         document.addEventListener('DOMContentLoaded', function() {
             // Animation pour les cards au scroll
             const cards = document.querySelectorAll('.service-card, .category-card');
@@ -38,4 +37,19 @@
                 });
             });
         });
-        
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const text = "Bienvenue dans votre espace santé, votre bien etre, notre priorité";
+            const target = document.getElementById("hero-typing");
+            let i = 0;
+
+            function type() {
+                if (i < text.length) {
+                    target.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, 45); // Vitesse de frappe (ms)
+                }
+            }
+            if (target) type();
+        });
+
