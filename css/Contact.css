@@ -1,70 +1,269 @@
-/* CONTACT PAGE */
+/* Contact.css */
+:root {
+    --primary-color: #2a7f62;
+    --secondary-color: #3a9e7f;
+    --accent-color: #f8a055;
+    --light-color: #f5f9f7;
+    --dark-color: #1a2e28;
+    --white: #ffffff;
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Montserrat', sans-serif;
+}
+
+/* Hero Section */
+.hero {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: var(--heading-font);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.hero p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    margin-bottom: 2rem;
+}
+
+/* Main Contact Section */
 .contact-main {
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
+    background-color: var(--white);
 }
 
 .contact-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
 }
 
 .contact-form {
-    flex: 2;
-}
-
-.contact-info {
-    flex: 1;
+    padding: 2rem;
+    background: var(--light-color);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .contact-form h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
     margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: var(--body-font);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(42, 127, 98, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Contact Info Section */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-card {
+    background: var(--light-color);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.info-card h3 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.info-card i {
     color: var(--primary-color);
 }
 
-.map-container {
-    height: 300px;
-    margin: 1.5rem 0;
-    border-radius: 8px;
-    overflow: hidden;
+.info-card p, .info-card a {
+    color: var(--dark-color);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    display: block;
 }
 
+.info-card a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* Map Container */
+.map-container {
+    margin-top: 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    display: block;
+}
+
+.map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.map-container:hover .map-overlay {
+    opacity: 1;
+}
+
+.btn-map {
+    background-color: var(--white);
+    color: var(--primary-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid var(--white);
+}
+
+.btn-map:hover {
+    background-color: transparent;
+    color: var(--white);
+}
+
+/* Horaires List */
 .horaires-list {
     list-style: none;
-    margin: 1rem 0;
+    padding: 0;
 }
 
 .horaires-list li {
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid #eee;
 }
 
+/* Urgence Info */
 .urgence-info {
-    background: rgba(255,255,255,0.1);
-    padding: 1rem;
-    border-radius: 8px;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
 }
 
 .urgence-info h4 {
+    color: #d9534f;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 0.5rem;
-    color: var(--accent-color);
 }
 
+/* Equipe Section */
 .equipe-contact {
-    padding: 3rem 1rem;
-    background: var(--light-color);
+    padding: 4rem 1rem;
+    background-color: var(--light-color);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    margin-bottom: 1rem;
+}
+
+.section-title p {
+    color: #666;
+    font-size: 1.1rem;
 }
 
 .equipe-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -72,9 +271,14 @@
 
 .membre-card {
     background: var(--white);
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.membre-card:hover {
+    transform: translateY(-5px);
 }
 
 .membre-img {
@@ -97,32 +301,57 @@
     padding: 1.5rem;
 }
 
+.membre-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
 .fonction {
     color: var(--primary-color);
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 0.3rem;
 }
 
 .specialite {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 0.5rem;
     font-style: italic;
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
 }
 
 .bio {
-    font-size: 0.9rem;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #eee;
+    color: var(--dark-color);
+    line-height: 1.6;
 }
 
+/* Responsive Design */
 @media (max-width: 992px) {
     .contact-container {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
     
-    .map-container {
-        height: 250px;
+    .equipe-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .equipe-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero {
+        padding: 3rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form, .info-card {
+        padding: 1.5rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.5rem;
     }
 }

@@ -71,3 +71,82 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.produits-slider');
+    const slides = document.querySelectorAll('.produit-card');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const dotsContainer = document.querySelector('.carousel-dots');
+    
+    let currentIndex = 0;
+    let slideWidth = slides[0].offsetWidth + 20; // 20px pour le gap
+    let slidesPerView = Math.floor(slider.offsetWidth / slideWidth);
+    
+    // Créer les dots
+    slides.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('carousel-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+            goToSlide(index);
+        });
+        dotsContainer.appendChild(dot);
+    });
+    
+    const dots = document.querySelectorAll('.carousel-dot');
+    
+    // Fonction pour aller à un slide spécifique
+    function goToSlide(index) {
+        currentIndex = index;
+        slider.scrollTo({
+            left: index * slideWidth,
+            behavior: 'smooth'
+        });
+        updateDots();
+    }
+    
+    // Fonction pour mettre à jour les dots actifs
+    function updateDots() {
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+    
+    // Bouton précédent
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = slides.length - slidesPerView;
+        }
+        goToSlide(currentIndex);
+    });
+    
+    // Bouton suivant
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < slides.length - slidesPerView) {
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+        goToSlide(currentIndex);
+    });
+    
+    // Mise à jour responsive
+    function updateSlideWidth() {
+        slideWidth = slides[0].offsetWidth + 20;
+        slidesPerView = Math.floor(slider.offsetWidth / slideWidth);
+    }
+    
+    window.addEventListener('resize', updateSlideWidth);
+    
+    // Détection du scroll pour mettre à jour les dots
+    slider.addEventListener('scroll', () => {
+        const newIndex = Math.round(slider.scrollLeft / slideWidth);
+        if (newIndex !== currentIndex) {
+            currentIndex = newIndex;
+            updateDots();
+        }
+    });
+});

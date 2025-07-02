@@ -87,79 +87,145 @@
     color: var(--primary-color);
 }
 
+/* Section produits phares */
 .produits-phares {
-    padding: 3rem 1rem;
-    background: var(--light-color);
+    background: #f8f9fa;
+    padding: 60px 0;
+}
+
+.produits-phares .section-title {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .produits-slider {
     display: flex;
-    gap: 2rem;
-    padding: 1rem;
+    gap: 32px;
     overflow-x: auto;
+    padding: 20px 0;
     scroll-snap-type: x mandatory;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.produits-slider::-webkit-scrollbar {
-    height: 8px;
-}
-
-.produits-slider::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-}
-
-.produits-slider::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-    border-radius: 10px;
 }
 
 .produit-card {
-    min-width: 250px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(42,127,98,0.08);
+    min-width: 260px;
+    max-width: 280px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
     scroll-snap-align: start;
-    background: var(--white);
-    border-radius: 8px;
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.produit-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(42,127,98,0.15);
+}
+
+.produit-img {
+    position: relative;
+    border-radius: 18px 18px 0 0;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    height: 180px;
+    background: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.produit-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .best-seller, .nouveaute {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    padding: 0.3rem 0.8rem;
-    border-radius: 30px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    color: var(--white);
+    top: 14px;
+    left: 14px;
+    background: #2a7f62;
+    color: #fff;
+    font-size: 0.85em;
+    padding: 5px 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px rgba(42,127,98,0.10);
 }
-
-.best-seller {
-    background: var(--accent-color);
-}
-
 .nouveaute {
-    background: var(--primary-color);
+    background: #e67e22;
+}
+
+.produit-info {
+    padding: 18px 18px 14px 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.produit-info h3 {
+    font-size: 1.15em;
+    margin: 0 0 6px 0;
+    color: #2a7f62;
+    font-weight: 600;
+}
+
+.produit-desc {
+    color: #888;
+    font-size: 0.98em;
+    margin-bottom: 10px;
+}
+
+.produit-prix {
+    margin-bottom: 12px;
+}
+
+.prix-actuel {
+    font-size: 1.2em;
+    color: #e67e22;
+    font-weight: bold;
 }
 
 .produit-actions {
     display: flex;
-    gap: 0.5rem;
+    gap: 10px;
+}
+
+.btn-ajouter {
+    flex: 1;
+    background: #2a7f62;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-ajouter:hover {
+    background: #22634e;
 }
 
 .btn-favori {
-    width: 40px;
-    background: #f5f5f5;
-    border: none;
-    border-radius: 4px;
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    color: #e67e22;
+    padding: 0 12px;
+    font-size: 1.2em;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background 0.2s, color 0.2s;
 }
 
 .btn-favori:hover {
-    color: var(--accent-color);
+    background: #ffe5c2;
+    color: #2a7f62;
 }
 
 .conseil-expert {
@@ -241,5 +307,148 @@
             "small2"
             "small3"
             "small4";
+    }
+}
+
+@media (max-width: 900px) {
+    .produits-slider {
+        gap: 18px;
+    }
+    .produit-card {
+        min-width: 220px;
+        max-width: 240px;
+    }
+}
+
+@media (max-width: 600px) {
+    .produits-phares {
+        padding: 30px 0;
+    }
+    .produits-slider {
+        gap: 12px;
+        padding: 10px 0;
+    }
+    .produit-card {
+        min-width: 170px;
+        max-width: 180px;
+    }
+    .produit-info {
+        padding: 10px 10px 8px 10px;
+    }
+}
+
+/* Carousel Styles */
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.produits-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    scrollbar-width: none; /* Pour Firefox */
+}
+
+.produits-slider::-webkit-scrollbar {
+    display: none; /* Pour Chrome/Safari */
+}
+
+.produit-card {
+    flex: 0 0 calc(33.333% - 20px);
+    scroll-snap-align: start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.produit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2a7f62;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: #1e6b50;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: #2a7f62;
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .produit-card {
+        flex: 0 0 calc(50% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .produit-card {
+        flex: 0 0 100%;
+    }
+    
+    .carousel-container {
+        padding: 0 20px;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
     }
 }

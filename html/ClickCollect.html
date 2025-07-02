@@ -46,7 +46,7 @@
         <div class="hero-content">
             <h1>Click & Collect</h1>
             <p>Commandez en ligne, retirez en pharmacie sans attente</p>
-            <a href="#produits" class="btn">Voir nos produits</a>
+            <a href="Produits.html" class="btn">Voir nos produits</a>
         </div>
     </section>
 
@@ -98,15 +98,46 @@
             <!-- Produit 1 -->
             <div class="produit-card" data-category="medicament">
                 <div class="produit-img">
-                    <img src="https://via.placeholder.com/300x300?text=Produit+1" alt="Produit 1">
+                    <img src="../assests/doliprane.jpg" alt="Doliprane 1000mg">
                     <span class="promo-badge">-20%</span>
                 </div>
                 <div class="produit-info">
                     <h3>Doliprane 1000mg</h3>
                     <p class="produit-desc">Boîte de 8 comprimés</p>
                     <div class="produit-prix">
-                        <span class="prix-actuel">5,90€</span>
-                        <span class="prix-ancien">7,40€</span>
+                        <span class="prix-actuel">3958 FCFA</span>
+                        <span class="prix-ancien">4964 FCFA</span>
+                    </div>
+                    <button class="btn-ajouter">Ajouter au panier</button>
+                </div>
+            </div>
+
+              <div class="produit-card" data-category="medicament">
+                <div class="produit-img">
+                    <img src="../assests/pack_3d_efferalgan_1000_agrumes.png" alt="Doliprane 1000mg">
+                </div>
+                <div class="produit-info">
+                    <h3>Efferalgan 1000mg</h3>
+                    <p class="produit-desc">Boîte de 8 comprimés</p>
+                    <div class="produit-prix">
+                        <span class="prix-actuel">1300 FCFA</span>
+                        <span class="prix-ancien">4964 FCFA</span>
+                    </div>
+                    <button class="btn-ajouter">Ajouter au panier</button>
+                </div>
+            </div>
+
+              <div class="produit-card" data-category="medicament">
+                <div class="produit-img">
+                    <img src="../assests/doliprane.jpg" alt="Doliprane 1000mg">
+                    <span class="promo-badge">-20%</span>
+                </div>
+                <div class="produit-info">
+                    <h3>Doliprane 1000mg</h3>
+                    <p class="produit-desc">Boîte de 8 comprimés</p>
+                    <div class="produit-prix">
+                        <span class="prix-actuel">3958 FCFA</span>
+                        <span class="prix-ancien">4964 FCFA</span>
                     </div>
                     <button class="btn-ajouter">Ajouter au panier</button>
                 </div>
@@ -115,13 +146,55 @@
             <!-- Produit 2 -->
             <div class="produit-card" data-category="parapharmacie">
                 <div class="produit-img">
-                    <img src="https://via.placeholder.com/300x300?text=Produit+2" alt="Produit 2">
+                    <img src="../assests/biafine.webp" alt="biafine">
                 </div>
                 <div class="produit-info">
                     <h3>Biafine</h3>
                     <p class="produit-desc">Crème 100g</p>
                     <div class="produit-prix">
-                        <span class="prix-actuel">8,20€</span>
+                        <span class="prix-actuel">5 501 FCFA</span>
+                    </div>
+                    <button class="btn-ajouter">Ajouter au panier</button>
+                </div>
+            </div>
+
+            <div class="produit-card" data-category="parapharmacie">
+                <div class="produit-img">
+                    <img src="../assests/biafine.webp" alt="biafine">
+                </div>
+                <div class="produit-info">
+                    <h3>Biafine</h3>
+                    <p class="produit-desc">Crème 100g</p>
+                    <div class="produit-prix">
+                        <span class="prix-actuel">5 501 FCFA</span>
+                    </div>
+                    <button class="btn-ajouter">Ajouter au panier</button>
+                </div>
+            </div>
+
+            <div class="produit-card" data-category="parapharmacie">
+                <div class="produit-img">
+                    <img src="../assests/biafine.webp" alt="biafine">
+                </div>
+                <div class="produit-info">
+                    <h3>Biafine</h3>
+                    <p class="produit-desc">Crème 100g</p>
+                    <div class="produit-prix">
+                        <span class="prix-actuel">5 501 FCFA</span>
+                    </div>
+                    <button class="btn-ajouter">Ajouter au panier</button>
+                </div>
+            </div>
+
+            <div class="produit-card" data-category="Bébé">
+                <div class="produit-img">
+                    <img src="../assests/biafine.webp" alt="biafine">
+                </div>
+                <div class="produit-info">
+                    <h3>Biafine</h3>
+                    <p class="produit-desc">Crème 100g</p>
+                    <div class="produit-prix">
+                        <span class="prix-actuel">5 501 FCFA</span>
                     </div>
                     <button class="btn-ajouter">Ajouter au panier</button>
                 </div>
@@ -146,11 +219,23 @@
                     </ul>
                 </div>
                 
-                <div class="adresse">
-                    <h3><i class="fas fa-map-marker-alt"></i> Adresse :</h3>
-                    <p>Pharmacie Sainte Marie<br>BP 1838 Libreville, Gabon</p>
-                    <a href="#" class="btn-outline"><i class="fas fa-map"></i> Voir sur la carte</a>
-                </div>
+               <div class="adresse">
+  <h3><i class="fas fa-map-marker-alt"></i> Adresse :</h3>
+  <p>Pharmacie Sainte Marie<br>BP 1838 Libreville, Gabon</p>
+  <a href="#" class="btn-outline" onclick="document.getElementById('map').style.display='block'; return false;">
+    <i class="fas fa-map"></i> Voir sur la carte
+  </a>
+
+  <!-- Carte Google Maps masquée par défaut -->
+  <div id="map" style="display: none; margin-top: 20px;">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7189340515824!2d9.434060510854863!3d0.4044130995899173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x107f3b9f01a47c9d%3A0xbc07d1654a4982be!2sPharmacie%20Sainte%20Marie!5e0!3m2!1sfr!2sga!4v1751439939882!5m2!1sfr!2sga"
+      width="100%" height="450" style="border:0;" allowfullscreen=""
+      loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>
+
             </div>
             
             <div class="info-img">
