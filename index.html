@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="style.css">
     <!-- Polices Google -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -356,22 +355,6 @@
             addMessage("Bonjour ! Je suis l'assistant de la Pharmacie Sainte Marie. Comment puis-je vous aider aujourd'hui ?", 'bot');
         }, 500);
     });
-</script>
-<script>
-  // Menu burger responsive
-  document.addEventListener('DOMContentLoaded', function() {
-    const burger = document.getElementById('burger-menu');
-    const navUl = document.querySelector('nav ul');
-    burger.addEventListener('click', function() {
-      navUl.classList.toggle('active');
-    });
-    // Fermer le menu au clic sur un lien
-    navUl.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navUl.classList.remove('active');
-      });
-    });
-  });
 </script>
    </body>
 </html>
