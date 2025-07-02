@@ -75,7 +75,7 @@
             
             <div class="service-card">
                 <div class="service-img">
-                    <img src="https://fiches-pratiques.chefdentreprise.com/Assets/Img/FICHEPRATIQUE/2020/7/351237/Decouvrir-avantages-click-and-collect-F.jpg" alt="Click & Collect">
+                    <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Click & Collect">
                 </div>
                 <div class="service-content">
                     <h3>Click & Collect</h3>
@@ -356,6 +356,22 @@
             addMessage("Bonjour ! Je suis l'assistant de la Pharmacie Sainte Marie. Comment puis-je vous aider aujourd'hui ?", 'bot');
         }, 500);
     });
+</script>
+<script>
+  // Menu burger responsive
+  document.addEventListener('DOMContentLoaded', function() {
+    const burger = document.getElementById('burger-menu');
+    const navUl = document.querySelector('nav ul');
+    burger.addEventListener('click', function() {
+      navUl.classList.toggle('active');
+    });
+    // Fermer le menu au clic sur un lien
+    navUl.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navUl.classList.remove('active');
+      });
+    });
+  });
 </script>
    </body>
 </html>
